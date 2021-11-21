@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" , initial-scale="1">
+<link rel="stylesheet" href="css/bootstrap.css" />
+<title>Insert title here</title>
+</head>
+<body>
+	<!--웹 사이트 제목-->
+	<header>
+		<a href="main.jsp" style="text-decoration: none;">
+			<h1 style="text-align: center;">게임커뮤니티</h1>
+		</a>
+	</header>
+	<!-- 웹 사이트 메뉴 -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="main.jsp">게임커뮤니티</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02"
+				aria-expanded="false" aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link" href="#">자유게시판 <span class="visually-hidden">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+    <!-- 게시글 리스트 -->
+	<!--section-->
+	<section style="margin-top: 5%; margin-left: 5%; margin-right: 5%; display: inline-block; width: 90%; height: 90%; border: 1px solid black;">
+		<section class="section_sub">
+			<a href="ramen_information1.html"> <img src="image/ramen1.png" class="image_ramen" alt="" align=left>
+			</a> <span> <br> <br> <br> <br> 한국인의 매운맛, 한국을<br> 대표하는 국가대표 라면!!!<br>
+			<br> <a id=continue href="ramen_information1.html">자세히 알아보기</a>
+			</span>
+		</section>
+	</section>
+	
+	  <!--하단 footer-->
+  <footer>
+    <span class="fotter_nav_text">
+      <p>제작자 : 김명진<br>
+        문의 : kimmjk35@naver.com
+      </p>
+    </span>
+    <!--footer nav메뉴-->
+    <nav id=footer_nav>
+      <a class="fotter_nav_text" href="#">회사소개</a>&nbsp&nbsp|&nbsp
+      <a class="fotter_nav_text" href="#">브랜드</a>&nbsp&nbsp|&nbsp
+      <a class="fotter_nav_text" href="#">제품</a>&nbsp&nbsp|&nbsp
+      <a class="fotter_nav_text" href="#">홍보</a>&nbsp&nbsp|&nbsp
+      <a class="fotter_nav_text" href="#">고객지원</a>
+    </nav>
+    <span id=fotter_sns>
+      <a href="https://www.youtube.com"><img class = "image_sns" src="image/image_youtube.png" alt="유튜브"></a>
+      <a href="https://www.facebook.com"><img class = "image_sns" src="image/image_facebook.png" alt="페이스북"></a>
+      <a href="https://www.instagram.com"><img class = "image_sns" src="image/image_instagram.png" alt="인스타그램"></a>
+    </span>
+  </footer>
+</body>
+</html>

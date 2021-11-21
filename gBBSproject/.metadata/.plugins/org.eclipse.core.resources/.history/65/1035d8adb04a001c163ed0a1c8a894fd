@@ -1,0 +1,132 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" , initial-scale="1">
+<link rel="stylesheet" href="css/bootstrap.css" />
+<title>Insert title here</title>
+</head>
+<body>
+    <!--웹 사이트 제목-->
+	<header>
+		<a href="main.jsp" style="text-decoration: none;">
+			<h1 style="text-align: center;">게임커뮤니티</h1>
+		</a>
+	</header>
+    <!-- 웹 사이트 메뉴 -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="main.jsp">게임커뮤니티</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02"
+				aria-expanded="false" aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link" href="#">자유게시판 <span class="visually-hidden">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	  <!--section-->
+  <section style = "display: inline-block; text-align: center; border: 1px solid black; width: 80%;">
+    <section class="section_sub">
+      <a href="ramen_information1.html">
+        <img src="image/ramen1.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        <br>
+        <br>
+        한국인의 매운맛, 한국을<br>
+        대표하는 국가대표 라면!!!<br><br>
+        <a id=continue href="ramen_information1.html">자세히 알아보기</a>
+      </span>
+    </section>
+    <span>&nbsp&nbsp&nbsp<span>
+    <section class="section_sub">
+      <a href="ramen_information2.html">
+        <img src="image/ramen2.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        <br>
+        <br>
+        집에서 간편하게 즐기는<br>
+        짜장면의 시초, 국민 별미!!<br><br>
+        <a id=continue href="ramen_information2.html">자세히 알아보기</a>
+      </span>
+    </section>
+    <div>&nbsp</div>
+    <section class="section_sub">
+      <a href="ramen_information3.html">
+        <img src="image/ramen3.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        <br>
+        <br>
+        깊은 진국의 맛!<br>
+        탕면(湯麵)시대의 개척자!!<br><br>
+        <a id=continue href="ramen_information3.html">자세히 알아보기</a>
+      </span>
+    </section>
+    <span>&nbsp&nbsp&nbsp<span>
+    <section class="section_sub">
+      <a href="ramen_information4.html">
+        <img src="image/ramen4.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        <br>
+        <br>
+        쫄깃하고 부드러운 면발에<br>
+        진한국물과 얼큰한 양념의 조화<br><br>
+        <a id=continue href="ramen_information4.html">자세히 알아보기</a>
+      </span>
+    </section>
+    <div>&nbsp</div>
+    <section class="section_sub">
+      <a href="ramen_information5.html">
+        <img src="image/ramen5.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        <br>
+        어떻게 비벼도 맛있다!<br>
+        오른손으로 비비고~<br>
+        왼손으로 비비고~<br><br>
+        <a id=continue href="ramen_information5.html">자세히 알아보기</a>
+      </span>
+    </section>
+    <span>&nbsp&nbsp&nbsp<span>
+    <section class="section_sub">
+      <a href="ramen_information6.html">
+        <img src="image/ramen6.png" class="image_ramen" alt="" align=left>
+      </a>
+      <span>
+        <br>
+        <br>
+        간편하게 즐길 수 있는<br>
+        전통 육개장<br>
+        성인, 중, 고등학생,수험생<br>
+        모두의 간식<br><br>
+        <a id=continue href="ramen_information6.html">자세히 알아보기</a>
+      </span>
+    </section>
+  </section>
+
+</body>
+</html>

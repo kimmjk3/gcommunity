@@ -11,6 +11,8 @@ C:\Users\audwls\Desktop\JSP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearc
 \sibal\src\main\java
 C:\Users\audwls\Desktop\JSP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2588572660.index
 \BBSVER5\src\main\java
+C:\Users\audwls\Desktop\gcommunity\gBBSproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1921639673.index
+\gBBS\src\main\java
 C:\Users\audwls\Desktop\gcommunity\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4118088635.index
 \gBBS\src\main\java
 C:\Users\audwls\Desktop\JSP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3719665060.index
@@ -27,3 +29,5 @@ C:\Users\audwls\Desktop\JSP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearc
 \BBSver7\src\main\java
 C:\Users\audwls\Desktop\JSP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4218742235.index
 \BBSver5\src\main\java
+C:\Users\audwls\Desktop\gcommunity\gBBSproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4118088635.index
+\gBBS\src\main\java
