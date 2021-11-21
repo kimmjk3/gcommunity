@@ -4,16 +4,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" , initial-scale="1">
+<!--부트스트랩-->
 <link rel="stylesheet" href="css/bootstrap.css" />
+<!--제목폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
+    <%
+        // 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
+        String user_ID = null;
+        if(session.getAttribute("user_ID") != null){
+            user_ID = (String)session.getAttribute("user_ID");
+        }
+    %>
 	<!--웹 사이트 제목-->
 	<header>
 		<a href="main.jsp" style="text-decoration: none;">
-			<h1 style="text-align: center;">게임커뮤니티</h1>
+			<h1 style="text-align: center;font-family: 'Do Hyeon', sans-serif; color:black;">게임커뮤니티</h1>
 		</a>
 	</header>
+
+	<%
+        // 로그인 하지 않았을 때 보여지는 화면
+        if(user_ID == null){
+    %>  
+	<a href="login.jsp" style = "float:right; margin-bottom:1px; text-decoration: none;" type="button" class="btn btn-secondary">로그인</a>
+    <%
+        // 로그인이 되어 있는 상태에서 보여주는 화면
+        }else{
+    %>
+    <a href="logoutAction.jsp" style = "float:right; margin-bottom:1px; text-decoration: none;" type="button" class="btn btn-secondary">로그아웃</a>
+    <%
+        }
+    %>
 	<!-- 웹 사이트 메뉴 -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align: center; width:100%;">
 		<div class="container-fluid">
@@ -37,21 +63,46 @@
 	
 	<!-- 게시글 리스트 -->
 	<!--section-->
-	<section style="margin-top: 5%; margin-left: 20%; margin-right: 20%; display: inline-block; width: 60%; height: 100%; border: 1px solid black;">
-		<section style = "margin-top: 5%; margin-left:5%; margin-right:5%; width: 40%; height: 800px; border: 1px solid black;">
-            
-		</section>
-		<section style = "margin-top: 5%; margin-left:5%; margin-right:5%; width: 40%; height: 400px; border: 1px solid black;">
-            
-        </section>
+    <section style = "margin-top:10px; margin-bottom:10px; margin-left:20%; margin-right:20%; width:60%; height:800px; border: 1px solid; text-align: center; display: inline-block">
+    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
+      <div class="card-header">공지사항</div>
+      <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+    
+    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
+      <div class="card-header">자유게시판</div>
+      <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+    
+    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
+      <div class="card-header">추천글</div>
+      <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
+      <div class="card-header">팁/공략</div>
+      <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+    </section>
+    
 
-	</section>
 
 	<!--하단 footer-->
 	<footer style = "background-color : gray">
 		<span>
 			<p>
-				제작자 : 김명진<br> 문의 : kimmjk35@naver.com
+				footer<br>footer<br>footer
 			</p>
 		</span>
 	</footer>
