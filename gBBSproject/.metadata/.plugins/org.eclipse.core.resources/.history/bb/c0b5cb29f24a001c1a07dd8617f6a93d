@@ -13,7 +13,7 @@ public class UserDAO {
     // 데이터베이스 이클립스 연결
     public UserDAO() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/gcommunity?characterEncoding=UTF-8&serverTimezone=UTC";
+            String dbURL = "jdbc:mysql://localhost:3306/project11?characterEncoding=UTF-8&serverTimezone=UTC";
             String dbID = "root";
             String dbPassword = "oracle";
             Class.forName("com.mysql.cj.jdbc.Driver");
