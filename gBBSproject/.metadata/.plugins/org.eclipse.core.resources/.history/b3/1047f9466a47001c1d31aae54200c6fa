@@ -1,0 +1,55 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class UserDAO {
+    private Connection conn;
+    private PreparedStatement pstmt; // sql문 전송 객체
+    private ResultSet rs; // 질의에 의해 생성된 테이블을 저장하는 객체
+
+    public UserDAO() {
+        try {
+            // mysql 접속 정보
+            String dbURL = "jdbc:mysql://localhost:3306/BBS?characterEncoding=UTF-8&serverTimezone=UTC";
+            String dbID = "root"; // mysql 접속 id
+            String dbPassword = "oracle"; // mysql 접속 비밀번호
+            Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버 인터페이스를 구현한 클래스를 로딩
+            conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+            System.out.println("UserDAO 연결직후");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int login(String userID, String userPassword) {
+        String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
+        try {
+            pstmt = conn.prepareStatement(SQL); // SQL문장 DB에 삽입
+            pstmt.setString(1, userID); // 첫번째 ?에 userID의 값 대입
+            rs = pstmt.executeQuery(); // 준비된 쿼리를 실행시키고 결과값을 ResultSet rs에 저장
+            if (rs.next()) { // 결과가 존재한다면 실행
+                if (rs.getString(1).equals(userPassword))
+                    return 1; // 유저가 입력한 비밀번호와 db의 비밀번호가 같다면 로그인 성공
+                else
+                    return 0; // 다르다면 비밀번호 불일치
+            } else {
+                return -1; // 존재하지 않다면 아이디가 없음
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -2; // 데이터베이스 오류
+    }
+
+    public int join(User user) {
+        String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?)";
+        try {
+            pstmt = conn.prepareStatement(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

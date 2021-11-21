@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\audwls\Documents\gcommunity\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4118088635.index
+1834039444.index
+623964138.index
+1874095689.index
+3239266154.index
+3724766730.index
+3413550015.index

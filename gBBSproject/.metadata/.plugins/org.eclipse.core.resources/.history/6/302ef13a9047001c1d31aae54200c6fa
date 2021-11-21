@@ -1,0 +1,63 @@
+package bbs;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class BbsDAO {
+
+    private Connection conn;
+    private ResultSet rs; // 질의에 의해 생성된 테이블을 저장하는 객체
+
+    public BbsDAO() {
+        try {
+            // mysql 접속 정보
+            String dbURL = "jdbc:mysql://localhost:3306/BBS?characterEncoding=UTF-8&serverTimezone=UTC";
+            String dbID = "root"; // mysql 접속 id
+            String dbPassword = "oracle"; // mysql 접속 비밀번호
+            Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버 인터페이스를 구현한 클래스를 로딩
+            conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+            System.out.println("UserDAO 연결직후");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getDate() {
+        String SQL = "SELECT bbsID FROM FROM BBS ORDER BY bbsID DESC";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) + 1;
+            }
+            return 1; // 첫 번째 게시물인 경우
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1; // 데이터베이스 오류
+    }
+
+    public int write(String bbsTitle, String userID, String bbsContent) {
+        String SQL = "INSERT INTO BBS VALUE (?, ?, ? ,? ,? ,?)";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, getNext());
+            pstmt.setString(2, bbsTitle);
+            pstmt.setString(3, userID);
+            pstmt.setString(4, getDate());
+            pstmt.setString(5, bbsContent);
+            pstmt.setInt(6, 1);
+            rs = pstmt.executeQuery();
+            return pstmt.executeUpdate();
+            if (rs.next()) {
+                return rs.getInt(1) + 1;
+            }
+            return 1; // 첫 번째 게시물인 경우
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1; // 데이터베이스 오류
+    }
+}
