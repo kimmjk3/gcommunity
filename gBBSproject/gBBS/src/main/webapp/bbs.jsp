@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="bbs.BbsDAO"%>
+<%@ page import="bbs.Bbs"%>
+<%@ page import="java.util.ArrayList"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +16,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-<title>메인</title>
+<title>게시판</title>
+<style>
+a, a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+</style>
 </head>
 <body>
 	<%
@@ -18,6 +30,11 @@
         String user_ID = null;
         if(session.getAttribute("user_ID") != null){
             user_ID = (String)session.getAttribute("user_ID");
+        }
+        /* 페이지처리 */
+        int pageNumber = 1;    
+        if(request.getParameter("pageNumber")!=null){
+            pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
         }
     %>
 	<!--웹 사이트 제목-->
@@ -61,7 +78,7 @@
 		</div>
 	</nav>
 
-	<div class="container">
+	<div class="container" style = "margin-top:10px;">
 		<div class="row">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
 				<thead>
@@ -71,33 +88,52 @@
 						<th style="background-color: #eeeeee; text-align: center;">제목</th>
 						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
 						<th style="background-color: #eeeeee; text-align: center;">추천수</th>
+						<th style="background-color: #eeeeee; text-align: center;">조회수</th>
 						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
 					</tr>
 				</thead>
 				<tbody>
+					<% 
+					   BbsDAO bbsDAO = new BbsDAO();
+					   ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+					   for(int i=0; i<list.size(); i++){
+					%>
 					<tr>
-						<td>1</td>
-						<td>LOL</td>
-						<td>하이하이</td>
-						<td>홍길동</td>
-						<td>4</td>
-						<td>2021-11-22</td>
+						<td><%= list.get(i).getPost_Number() %></td>
+						<td><%= list.get(i).getPost_Category() %></td>
+						<td>
+							<a href="view.jsp?Post_Number=<%=list.get(i).getPost_Number() %>"><%= list.get(i).getPost_Title() %></a>
+						</td>
+						<td><%=list.get(i).getUser_NickName()%></td>
+						<td><%= list.get(i).getPost_Recommend() %></td>
+						<td><%= list.get(i).getPost_Views() %></td>
+						<td><%= list.get(i).getPost_InputDate().substring(0,11) + " " + list.get(i).getPost_InputDate().substring(11,13)+"시 " + list.get(i).getPost_InputDate().substring(14,16) + "분"%></td>
 					</tr>
+
+					<%
+					   }
+					%>
 				</tbody>
 			</table>
+
+			<!-- 페이징처리 -->
+			<%
+                if(pageNumber != 1){
+           %>
+			<a href="bbs.jsp?pageNumber=<%=pageNumber-1%>" class="btn btn-primary pull-left" style="float: left;">이전</a>
+			<%   
+                } if(bbsDAO.nextPage(pageNumber + 1)){
+           %>
+			<a href="bbs.jsp?pageNumber=<%=pageNumber+1%>" class="btn btn-primary pull-left" style="float: left;">다음</a>
+			<%   
+                }
+           %>
+
 			<div>
 				<a href="write.jsp" class="btn btn-primary" style="float: right;">글쓰기</a>
 			</div>
 		</div>
 	</div>
 
-	<!--하단 footer-->
-	<footer style="background-color: gray">
-		<div>
-			<p>
-				footer<br>footer<br>footer1
-			</p>
-		</div>
-	</footer>
 </body>
 </html>

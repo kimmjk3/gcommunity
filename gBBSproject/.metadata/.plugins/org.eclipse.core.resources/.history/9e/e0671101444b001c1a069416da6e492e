@@ -1,9 +1,0 @@
-package bbs;
-
-public class Bbs {
-    private int post_Number; //게시글번호
-    private int board_Number; //게시판번호
-    private String post_Title; //제목
-    private String post_Contents; //내용
-
-}

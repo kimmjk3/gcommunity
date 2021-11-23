@@ -65,46 +65,36 @@
 	<!--section-->
     <section style = "margin-top:10px; margin-bottom:10px; margin-left:20%; margin-right:20%; width:60%; height:800px; border: 1px solid; text-align: center; display: inline-block">
     <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">공지사항</div>
-      <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
-      </div>
-    </div>
-    
-    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
       <div class="card-header">자유게시판</div>
       <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
+        <h4 class="card-title">-</h4>
+        <p class="card-text">-<br><br><br><br><br><br><br><br><br><br><br></p>
       </div>
     </div>
     
     <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
       <div class="card-header">추천글</div>
       <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
+        <h4 class="card-title">-</h4>
+        <p class="card-text">-<br><br><br><br><br><br><br><br><br><br><br></p>
+      </div>
+    </div>
+    
+    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
+      <div class="card-header">팁/공략</div>
+      <div class="card-body">
+        <h4 class="card-title">-</h4>
         <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
       </div>
     </div>
     <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">팁/공략</div>
+      <div class="card-header">공지사항</div>
       <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
+        <h4 class="card-title">-</h4>
         <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
       </div>
     </div>
     </section>
     
-
-
-	<!--하단 footer-->
-	<footer style = "background-color : gray">
-		<span>
-			<p>
-				footer<br>footer<br>footer
-			</p>
-		</span>
-	</footer>
 </body>
 </html>

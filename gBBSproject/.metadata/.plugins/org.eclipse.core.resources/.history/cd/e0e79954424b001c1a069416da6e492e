@@ -1,8 +1,0 @@
-package bbs;
-
-public class Bbs {
-    private int board_Number;
-    BOARD_NAME BOARD_INPUTDATE
-    BOARD_CORRENT
-    BOARD_DELETEDATE BOARD_MANAGER
-}

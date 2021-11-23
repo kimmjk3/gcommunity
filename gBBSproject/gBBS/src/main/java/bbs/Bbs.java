@@ -13,6 +13,16 @@ public class Bbs {
     private int post_Views; // 조회수
     private int post_Writer; // 작성자
 
+    private String user_NickName;
+
+    public String getUser_NickName() {
+        return user_NickName;
+    }
+
+    public void setUser_NickName(String user_NickName) {
+        this.user_NickName = user_NickName;
+    }
+
     public int getPost_Number() {
         return post_Number;
     }

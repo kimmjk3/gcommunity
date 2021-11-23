@@ -136,9 +136,9 @@ INSERT INTO `USER_TB`(
 	`USER_AUTHORITY`,		#권한
 	`USER_STATE`)			#활동상태
 values
-	#(null,'idid1234','pwpw1234','추홍재','추닉네임','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1),
-	(null,'kimidid12','kimpwpw1234','김명진','김닉네임','남','1996-12-02','kim@naver.com','010-1234-5678',default,null,1,1),
-	(null,'son0001','sonpassword','손대영','손닉네임','남','1993-10-02','son@naver.com','010-1515-7878',default,null,1,1)
+	(null,'idid1234','pwpw1234','추홍재','추닉네임','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1),
+	(null,'kimidid1234','kimpwpw1234','김명진','김닉네임','남','1996-12-02','kim@naver.com','010-1234-5678',default,null,1,1),
+	(null,'sonidid1234','sonpwpw1234','손대영','손닉네임','남','1993-10-02','son@naver.com','010-1515-7878',default,null,1,1)
 
 
 #게시판 데이터삽입
@@ -151,9 +151,9 @@ insert into `BOARD_TB` (
 	`BOARD_MANAGER`			#게시판생성자
 )values
 	(null,'자유게시판',default,null,null,1),
-	(null,'공지사항',default,null,null,1),
+	(null,'추천글',default,null,null,1),
 	(null,'팁/공략',default,null,null,1),
-	(null,'추천글',default,null,null,1)
+	(null,'공지사항',default,null,null,1)
 ;
 
 #게시글 데이터삽입
@@ -170,9 +170,9 @@ insert into `POST_TB`(
 	`POST_VIEWS`,			#조회수
 	`POST_WRITER`			#작성자
 )values
-	(null,1,'이거알려주세요','게임할때 이 설정법 맞나요?','질문',default,null,null,3,2,1),
-	(null,2,'공지입니다.','게시판 규칙 준수해 주세요','공지',default,null,null,2,4,2),
-	(null,1,'이거 공략좀 알려주세요','공략좀 알려주세요','질문',default,null,null,4,4,3)
+	(null,1,'이거알려주세요','게임할때 이 설정법 맞나요?','LOL',default,null,null,3,2,1),
+	(null,4,'ㅎㅇㅎㅇㅎㅇ.','게시판 규칙 준수해 주세요','오버워치',default,null,null,2,4,2),
+	(null,1,'이거 공략좀 알려주세요','공략좀 알려주세요','디아블로',default,null,null,4,4,3)
 ;
 
 #댓글 데이터 삽입
@@ -208,47 +208,3 @@ select * from `BOARD_TB` ; 			#게시판
 select * from `POST_TB`;			#게시글
 select * from  `COMMENT_TB`; 		#댓글
 select * from  `ATTACHMENTS_TB` ;	#첨부파일
-
-#게시판별 조회
-select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE) as  순번,
-    BOARD_NUMBER,
-    POST_TITLE,
-    POST_CONTENTS,
-    POST_CATEGORY,
-    POST_INPUTDATE,
-    POST_CORRENT,
-    POST_DELETEDATE,
-    POST_RECOMMEND,
-    POST_VIEWS,
-    POST_WRITER
- from POST_TB;
-
-#게시판별 조회2
-select ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS 
-	rownum, 
-	post_title, 
-	post_category 
-from post_tb 
-where board_number=2;
-
-DESC `USER_TB`;
-DESC `BOARD_TB`;
-DESC `POST_TB` ;
-DESC `COMMENT_TB`;
-DESC `ATTACHMENTS_TB`;
-
-#게시판별 조회(역순)
-select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE ) as  순번,
-    BOARD_NUMBER,
-    POST_TITLE,
-    POST_CONTENTS,
-    POST_CATEGORY,
-    POST_INPUTDATE,
-    POST_CORRENT,
-    POST_DELETEDATE,
-    POST_RECOMMEND,
-    POST_VIEWS,
-    POST_WRITER
- from POST_TB 
- WHERE board_number=2
- ORDER BY 순번 DESC;

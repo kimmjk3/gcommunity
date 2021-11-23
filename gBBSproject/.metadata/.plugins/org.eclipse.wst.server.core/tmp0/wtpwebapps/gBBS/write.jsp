@@ -112,14 +112,5 @@
 
 		</div>
 	</div>
-
-	<!--하단 footer-->
-	<footer style="background-color: gray">
-		<div>
-			<p>
-				footer<br>footer<br>footer1
-			</p>
-		</div>
-	</footer>
 </body>
 </html>
