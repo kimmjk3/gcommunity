@@ -71,14 +71,24 @@
 						</tr>
 					</thead>
 					<tbody>
+                        <tr>
+                            <td>
+                                <input type="number" class="form-control" placeholder="게시판 번호" name="board_Number" maxlength="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" placeholder="카테고리" name="post_Category" maxlength="50">
+                            </td>
+                        </tr>
 						<tr>
 							<td>
-								<input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50">
+								<input type="text" class="form-control" placeholder="글 제목" name="post_Title" maxlength="50">
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="1000" style="height: 350px;"></textarea>
+								<textarea class="form-control" placeholder="글 내용" name="post_Contents" maxlength="1000" style="height: 350px;"></textarea>
 							</td>
 						</tr>
 					</tbody>
