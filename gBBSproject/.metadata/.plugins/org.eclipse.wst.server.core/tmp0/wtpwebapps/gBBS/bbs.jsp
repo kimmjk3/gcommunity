@@ -13,7 +13,7 @@
 <title>메인</title>
 </head>
 <body>
-    <%
+	<%
         // 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
         String user_ID = null;
         if(session.getAttribute("user_ID") != null){
@@ -23,25 +23,25 @@
 	<!--웹 사이트 제목-->
 	<header>
 		<a href="main.jsp" style="text-decoration: none;">
-			<h1 style="text-align: center;font-family: 'Do Hyeon', sans-serif; color:black;">게임커뮤니티</h1>
+			<h1 style="text-align: center; font-family: 'Do Hyeon', sans-serif; color: black;">게임커뮤니티</h1>
 		</a>
 	</header>
 
 	<%
         // 로그인 하지 않았을 때 보여지는 화면
         if(user_ID == null){
-    %>  
-	<a href="login.jsp" style = "float:right; margin-bottom:1px; text-decoration: none;" type="button" class="btn btn-secondary">로그인</a>
-    <%
+    %>
+	<a href="login.jsp" style="float: right; margin-bottom: 1px; text-decoration: none;" type="button" class="btn btn-secondary">로그인</a>
+	<%
         // 로그인이 되어 있는 상태에서 보여주는 화면
         }else{
     %>
-    <a href="logoutAction.jsp" style = "float:right; margin-bottom:1px; text-decoration: none;" type="button" class="btn btn-secondary">로그아웃</a>
-    <%
+	<a href="logoutAction.jsp" style="float: right; margin-bottom: 1px; text-decoration: none;" type="button" class="btn btn-secondary">로그아웃</a>
+	<%
         }
     %>
 	<!-- 웹 사이트 메뉴 -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align: center; width:100%;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align: center; width: 100%;">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="main.jsp">게임커뮤니티</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02"
@@ -52,7 +52,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor02">
 				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link" href="#">자유게시판 <span class="visually-hidden">(current)</span>
+					<li class="nav-item"><a class="nav-link active" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
@@ -60,51 +60,44 @@
 			</div>
 		</div>
 	</nav>
-	
-	<!-- 게시글 리스트 -->
-	<!--section-->
-    <section style = "margin-top:10px; margin-bottom:10px; margin-left:20%; margin-right:20%; width:60%; height:800px; border: 1px solid; text-align: center; display: inline-block">
-    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">공지사항</div>
-      <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
-      </div>
-    </div>
-    
-    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">자유게시판</div>
-      <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
-      </div>
-    </div>
-    
-    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">추천글</div>
-      <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
-      </div>
-    </div>
-    <div class="card text-white bg-dark mb-3" style="width: 45%; display: inline-block">
-      <div class="card-header">팁/공략</div>
-      <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">1<br><br><br><br><br><br><br><br><br><br><br></p>
-      </div>
-    </div>
-    </section>
-    
 
+	<div class="container">
+		<div class="row">
+			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
+				<thead>
+					<tr>
+						<th style="background-color: #eeeeee; text-align: center;">번호</th>
+						<th style="background-color: #eeeeee; text-align: center;">카테고리</th>
+						<th style="background-color: #eeeeee; text-align: center;">제목</th>
+						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
+						<th style="background-color: #eeeeee; text-align: center;">추천수</th>
+						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>LOL</td>
+						<td>하이하이</td>
+						<td>홍길동</td>
+						<td>4</td>
+						<td>2021-11-22</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<a href="write.jsp" class="btn btn-primary" style="float: right;">글쓰기</a>
+			</div>
+		</div>
+	</div>
 
 	<!--하단 footer-->
-	<footer style = "background-color : gray">
-		<span>
+	<footer style="background-color: gray">
+		<div>
 			<p>
-				footer<br>footer<br>footer
+				footer<br>footer<br>footer1
 			</p>
-		</span>
+		</div>
 	</footer>
 </body>
 </html>

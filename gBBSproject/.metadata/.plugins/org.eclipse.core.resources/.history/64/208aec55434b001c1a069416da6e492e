@@ -1,0 +1,10 @@
+package bbs;
+
+public class Bbs {
+    private int board_Number; // 게시판번호
+    private String board_Name; // 게시판이름
+    private String board_InputDate; // 게시판등록일
+    private String board_Conrrent; // 게시판수정일
+    private String board_DeleteDate;// 게시판삭제일
+    private int board_Manager; // 게시판생성자
+}

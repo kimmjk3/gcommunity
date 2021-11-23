@@ -1,0 +1,16 @@
+package bbs;
+
+public class Bbs {
+    private int post_Number; // 게시글번호
+    private int board_Number; // 게시판번호
+    private String post_Title; // 제목
+    private String post_Contents; // 내용
+    private String post_Category;   //카테고리
+    private String post_InputDate;  //작성일
+    private String post_Corrent;    //수정일
+    private String post_DeleteDate; //삭제일
+    private int post_Recommned; //추천수
+    private int post_Views;  //조회수
+    private int post_Writer;    //작성자
+
+}

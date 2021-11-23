@@ -3,60 +3,6 @@ create database gcommunity;
 SHOW DATABASES;
 use gcommunity;
 
-SHOW DATABASES;
-USE project11;
-SELECT * FROM USER_TB;
-
-select * from `USER_TB`;			#사용자
-select * from `BOARD_TB` ; 			#게시판
-select * from `POST_TB`;			#게시글
-select * from  `COMMENT_TB`; 		#댓글
-select * from  `ATTACHMENTS_TB` ;	#첨부파일
-
-#게시판별 조회
-select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE) as  순번,
-    BOARD_NUMBER,
-    POST_TITLE,
-    POST_CONTENTS,
-    POST_CATEGORY,
-    POST_INPUTDATE,
-    POST_CORRENT,
-    POST_DELETEDATE,
-    POST_RECOMMEND,
-    POST_VIEWS,
-    POST_WRITER
- from POST_TB;
-
-#게시판별 조회2
-select ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS 
-	rownum, 
-	post_title, 
-	post_category 
-from post_tb 
-where board_number=2;
-
-DESC `USER_TB`;
-DESC `BOARD_TB`;
-DESC `POST_TB` ;
-DESC `COMMENT_TB`;
-DESC `ATTACHMENTS_TB`;
-
-#게시판별 조회(역순)
-select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE ) as  순번,
-    BOARD_NUMBER,
-    POST_TITLE,
-    POST_CONTENTS,
-    POST_CATEGORY,
-    POST_INPUTDATE,
-    POST_CORRENT,
-    POST_DELETEDATE,
-    POST_RECOMMEND,
-    POST_VIEWS,
-    POST_WRITER
- from POST_TB 
- WHERE board_number=2
- ORDER BY 순번 DESC;
-
 #사용자 테이블	생성
 CREATE TABLE `USER_TB` (
 	`USER_NUMBER`	INT	NOT null AUTO_INCREMENT PRIMARY KEY,				#회원번호
@@ -91,7 +37,7 @@ CREATE TABLE `POST_TB` (
 	`POST_TITLE`	VARCHAR(100)	NOT NULL,								#제목
 	`POST_CONTENTS`	VARCHAR(1000)	NOT NULL,								#내용
 	`POST_CATEGORY`	VARCHAR(20)	NOT NULL,									#카테고리
-	`POST_INPUTDATE`	DATETIME	NOT NULL	DEFAULT NOW(),				#등록일
+	`POST_INPUTDATE`	DATETIME	NOT NULL	DEFAULT NOW(),				#작성일
 	`POST_CORRENT`	DATETIME	NULL,										#수정일
 	`POST_DELETEDATE`	DATETIME	NULL,									#삭제일
 	`POST_RECOMMEND`	INT	NOT NULL	DEFAULT 0,							#추천수
@@ -254,3 +200,55 @@ insert into `ATTACHMENTS_TB` (
 	`FILE_INPUTDATE`,		#파일등록일
 	`FILE_DELETEDATE`		#파일삭제일
 )values(null,3,1,'asd',3.6,'jpg',default,null);
+
+
+
+select * from `USER_TB`;			#사용자
+select * from `BOARD_TB` ; 			#게시판
+select * from `POST_TB`;			#게시글
+select * from  `COMMENT_TB`; 		#댓글
+select * from  `ATTACHMENTS_TB` ;	#첨부파일
+
+#게시판별 조회
+select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE) as  순번,
+    BOARD_NUMBER,
+    POST_TITLE,
+    POST_CONTENTS,
+    POST_CATEGORY,
+    POST_INPUTDATE,
+    POST_CORRENT,
+    POST_DELETEDATE,
+    POST_RECOMMEND,
+    POST_VIEWS,
+    POST_WRITER
+ from POST_TB;
+
+#게시판별 조회2
+select ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS 
+	rownum, 
+	post_title, 
+	post_category 
+from post_tb 
+where board_number=2;
+
+DESC `USER_TB`;
+DESC `BOARD_TB`;
+DESC `POST_TB` ;
+DESC `COMMENT_TB`;
+DESC `ATTACHMENTS_TB`;
+
+#게시판별 조회(역순)
+select row_number() over(partition by BOARD_NUMBER order by POST_INPUTDATE ) as  순번,
+    BOARD_NUMBER,
+    POST_TITLE,
+    POST_CONTENTS,
+    POST_CATEGORY,
+    POST_INPUTDATE,
+    POST_CORRENT,
+    POST_DELETEDATE,
+    POST_RECOMMEND,
+    POST_VIEWS,
+    POST_WRITER
+ from POST_TB 
+ WHERE board_number=2
+ ORDER BY 순번 DESC;

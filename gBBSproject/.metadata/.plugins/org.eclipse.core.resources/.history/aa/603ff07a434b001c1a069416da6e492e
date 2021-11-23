@@ -1,0 +1,28 @@
+package bbs;
+
+
+
+
+
+
+//게시판 getter setter
+/*
+ * public class Bbs { private int board_Number; // 게시판번호 private String
+ * board_Name; // 게시판이름 private String board_InputDate; // 게시판등록일 private String
+ * board_Conrrent; // 게시판수정일 private String board_DeleteDate;// 게시판삭제일 private
+ * int board_Manager; // 게시판생성자
+ * 
+ * public int getBoard_Number() { return board_Number; } public void
+ * setBoard_Number(int board_Number) { this.board_Number = board_Number; }
+ * public String getBoard_Name() { return board_Name; } public void
+ * setBoard_Name(String board_Name) { this.board_Name = board_Name; } public
+ * String getBoard_InputDate() { return board_InputDate; } public void
+ * setBoard_InputDate(String board_InputDate) { this.board_InputDate =
+ * board_InputDate; } public String getBoard_Conrrent() { return board_Conrrent;
+ * } public void setBoard_Conrrent(String board_Conrrent) { this.board_Conrrent
+ * = board_Conrrent; } public String getBoard_DeleteDate() { return
+ * board_DeleteDate; } public void setBoard_DeleteDate(String board_DeleteDate)
+ * { this.board_DeleteDate = board_DeleteDate; } public int getBoard_Manager() {
+ * return board_Manager; } public void setBoard_Manager(int board_Manager) {
+ * this.board_Manager = board_Manager; } }
+ */

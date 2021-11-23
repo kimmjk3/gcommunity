@@ -52,7 +52,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor02">
 				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link" href="#">자유게시판 <span class="visually-hidden">(current)</span>
+					<li class="nav-item"><a class="nav-link" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
