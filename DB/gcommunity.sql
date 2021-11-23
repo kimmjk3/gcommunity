@@ -136,7 +136,7 @@ INSERT INTO `USER_TB`(
 	`USER_AUTHORITY`,		#권한
 	`USER_STATE`)			#활동상태
 values
-	(null,'idid1234','pwpw1234','추홍재','추닉네임','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1),
+	#(null,'idid1234','pwpw1234','추홍재','추닉네임','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1),
 	(null,'kimidid12','kimpwpw1234','김명진','김닉네임','남','1996-12-02','kim@naver.com','010-1234-5678',default,null,1,1),
 	(null,'son0001','sonpassword','손대영','손닉네임','남','1993-10-02','son@naver.com','010-1515-7878',default,null,1,1)
 
@@ -151,7 +151,9 @@ insert into `BOARD_TB` (
 	`BOARD_MANAGER`			#게시판생성자
 )values
 	(null,'자유게시판',default,null,null,1),
-	(null,'공지사항',default,null,null,1)
+	(null,'공지사항',default,null,null,1),
+	(null,'팁/공략',default,null,null,1),
+	(null,'추천글',default,null,null,1)
 ;
 
 #게시글 데이터삽입

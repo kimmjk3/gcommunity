@@ -29,7 +29,7 @@
             script.println("location.href = 'login.jsp'");
             script.println("</script>");
         } else{    //로그인이 되어있다면
-            if(/*bbs.getBoard_Number() == null ||*/ bbs.getPost_Title()==null || bbs.getPost_Contents()==null || bbs.getPost_Category() == null){  //제목이나 내용을 입력안했다면
+            if(bbs.getBoard_Number() == null || bbs.getPost_Title()==null || bbs.getPost_Contents()==null || bbs.getPost_Category() == null){  //제목이나 내용을 입력안했다면
                         PrintWriter script = response.getWriter();
                         script.println("<script>");
                         script.println("alert('입력이 안 된 사항이 있습니다.')");

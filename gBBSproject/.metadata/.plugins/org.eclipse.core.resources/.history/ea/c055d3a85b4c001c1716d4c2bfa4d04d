@@ -74,7 +74,6 @@
 						<tr>
 							<td>
 								<select type="number" class="form-control" placeholder="게시판 번호" name="board_Number">
-									<option value="" selected disabled hidden>게시판 선택</option>
 									<option value="1">자유게시판</option>
 									<option value="2">추천글</option>
 									<option value="3">팁/공략</option>
@@ -85,7 +84,7 @@
 						<tr>
 							<td>
 								<select type="text" class="form-control" placeholder="카테고리" name="post_Category">
-									<option value="" selected disabled hidden>카테고리 선택</option>
+								    <option value="none">==선택==</option>
 									<option value="LOL">LOL</option>
 									<option value="오버워치">오버워치</option>
 									<option value="서든어택">서든어택</option>

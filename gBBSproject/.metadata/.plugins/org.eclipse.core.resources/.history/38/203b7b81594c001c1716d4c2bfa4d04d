@@ -2,7 +2,7 @@ package bbs;
 
 public class Bbs {
     private int post_Number; // 게시글번호
-    private Integer board_Number; // 게시판번호
+    private int board_Number; // 게시판번호
     private String post_Title; // 제목
     private String post_Contents; // 내용
     private String post_Category; // 카테고리
@@ -21,11 +21,11 @@ public class Bbs {
         this.post_Number = post_Number;
     }
 
-    public Integer getBoard_Number() {
+    public int getBoard_Number() {
         return board_Number;
     }
 
-    public void setBoard_Number(Integer board_Number) {
+    public void setBoard_Number(int board_Number) {
         this.board_Number = board_Number;
     }
 
