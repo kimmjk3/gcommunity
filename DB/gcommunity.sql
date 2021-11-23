@@ -150,7 +150,7 @@ insert into `BOARD_TB` (
 	`BOARD_DELETEDATE`,		#게시판삭제일
 	`BOARD_MANAGER`			#게시판생성자
 )values
-	(null,'게임게시판',default,null,null,1),
+	(null,'자유게시판',default,null,null,1),
 	(null,'공지사항',default,null,null,1)
 ;
 
@@ -200,8 +200,6 @@ insert into `ATTACHMENTS_TB` (
 	`FILE_INPUTDATE`,		#파일등록일
 	`FILE_DELETEDATE`		#파일삭제일
 )values(null,3,1,'asd',3.6,'jpg',default,null);
-
-
 
 select * from `USER_TB`;			#사용자
 select * from `BOARD_TB` ; 			#게시판
