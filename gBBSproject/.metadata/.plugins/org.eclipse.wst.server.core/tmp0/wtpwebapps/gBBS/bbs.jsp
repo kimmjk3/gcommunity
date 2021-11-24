@@ -80,9 +80,9 @@ a, a:hover {
 		</div>
 	</nav>
 
-	<div class="container" style = "margin-top:10px;">
+	<div class="container" style="margin-top: 10px;">
 		<div class="row">
-		    <div style = "font-family: 'Jua', sans-serif; font-size:30px;">자유게시판</div>
+			<div style="font-family: 'Jua', sans-serif; font-size: 30px;">자유게시판</div>
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
 				<thead>
 					<tr>
@@ -124,11 +124,17 @@ a, a:hover {
 			<%
                 if(pageNumber != 1){
            %>
-			<a href="bbs.jsp?pageNumber=<%=pageNumber-1%>" class="btn btn-primary pull-left" style="float: left;">이전</a>
-			<%   
+			<div>
+				<div>
+					<a href="bbs.jsp?pageNumber=<%=pageNumber-1%>" class="btn btn-primary" style="float:left; margin-right:2px;">이전</a>
+				</div>
+				<%   
                 } if(bbsDAO.nextPage(pageNumber + 1)){
            %>
-			<a href="bbs.jsp?pageNumber=<%=pageNumber+1%>" class="btn btn-primary pull-left" style="float: left;">다음</a>
+				<div>
+					<a href="bbs.jsp?pageNumber=<%=pageNumber+1%>" class="btn btn-primary" style="float: left;">다음</a>
+				</div>
+			</div>
 			<%   
                 }
            %>

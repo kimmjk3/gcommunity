@@ -8,43 +8,58 @@
 <meta name="viewport" content="width-device-width", initial-scale="1">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
+<!--제목폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <title>회원가입</title>
 </head>
 <body>
-    <nav class="navbar navbar-default"> <!-- 네비게이션 -->
-        <div class="navbar-header">     <!-- 네비게이션 상단 부분 -->
-            <!-- 네비게이션 상단 박스 영역 -->
-            <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false">
-                <!-- 이 삼줄 버튼은 화면이 좁아지면 우측에 나타난다 -->
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <%
+    // 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
+    String user_ID = null;
+    if (session.getAttribute("user_ID") != null) {
+        user_ID = (String) session.getAttribute("user_ID");
+    }
+    %>
+    <!--웹 사이트 제목-->
+    <header>
+        <a href="main.jsp" style="text-decoration: none;">
+            <h1 style="text-align: center; font-family: 'Do Hyeon', sans-serif; color: black;">게임커뮤니티</h1>
+        </a>
+    </header>
+
+    <%
+    // 로그인 하지 않았을 때 보여지는 화면
+    if (user_ID == null) {
+    %>
+    <a href="login.jsp" style="float: right; margin-bottom: 1px; text-decoration: none;" type="button" class="btn btn-secondary">로그인</a>
+    <%
+    // 로그인이 되어 있는 상태에서 보여주는 화면
+    } else {
+    %>
+    <a href="logoutAction.jsp" style="float: right; margin-bottom: 1px; text-decoration: none;" type="button" class="btn btn-secondary">로그아웃</a>
+    <%
+    }
+    %>
+    <!-- 웹 사이트 메뉴 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-align: center; width: 100%;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main.jsp">게임커뮤니티</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02"
+                aria-expanded="false" aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-            <a class="navbar-brand" href="main.jsp">Gcommunity</a>
-        </div>
-        <!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="main.jsp">게시판</a></li>
-                <li><a href="bbs.jsp">추천글</a></li>
-                <li><a href="bbs.jsp">팁/공략</a></li>
-            </ul>
-            <!-- 헤더 우측에 나타나는 드랍다운 영역 -->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle"
-                        data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">접속하기<span class="caret"></span></a>
-                    <!-- 드랍다운 아이템 영역 -->    
-                    <ul class="dropdown-menu">
-                        <li class="active"><a href="login.jsp">로그인</a></li>
-                        <li><a href="join.jsp">회원가입</a></li>
-                    </ul>
-                </li>
-            </ul>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     
@@ -59,7 +74,7 @@
                     <h5 style="text-align: left;">아이디</h5>
                     <div class="form-group">
                         
-	                        <input type="text" class="form-control" placeholder="10자 이내로 씁시다.."
+	                        <input type="text" class="form-control" placeholder="10자 이내"
 	                         id="user_ID" name="user_ID" maxlength="10" onkeyup="idCheckReturn();">
 	                        <input type="button" onclick="idCheckFunction();" value="중복체크">
 	                        	                        
@@ -117,16 +132,17 @@
                     
                     <h5 style="text-align: left;">이메일</h5>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="이메일" 
+                        <input type="email" class="form-control" placeholder=".com 도메인으로만 입력해주세요" 
                         id="user_Email" name="user_Email" maxlength="20" onkeyup="emailCheckReturn();">
                         <input type="button" onclick="emailCheckFunction();" value="중복체크">
+                        <!-- <input type="button" onclick="EmailCertified();" value="인증번호 받기"> -->
                     </div>
                     
                     <h5 style="text-align: left;">휴대전화</h5>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="전화번호입력 - 빼고" 
                         name="user_PhoneNumber" id="user_PhoneNumber" maxlength="20">
-                        <input type="button" onclick="CertifiedNumberCheck();" value="인증번호 받기">
+                        
                     </div>
                     
                     <input type="submit" class="btn btn-primary form-control" value="회원가입">
@@ -158,10 +174,10 @@
 	         alert("아이디를 적어주세요");
          }else{
         	 $.ajax({
-                 type: 'post', url: './UserIdCheck', data:{user_ID: user_ID},
+                 type: 'post', url: './UserOverlapCheck', data:{user_ID: user_ID},
               success: function(result){
                   if(result == 1){
-                      alert("아이디가 중복입니다");
+                      alert("아이디 중복입니다");
                   }else{
                       alert("아이디 사용 가능합니다");
                       
@@ -180,10 +196,10 @@
              alert("닉네임을 적어주세요");
          }else{
              $.ajax({
-                 type: 'post', url: './UserNickCheck', data:{user_NickName: user_NickName},
+                 type: 'post', url: './UserOverlapCheck', data:{user_NickName: user_NickName},
               success: function(result){
                   if(result == 1){
-                      alert("닉네임을 중복입니다");
+                      alert("닉네임 중복입니다");
                   }else{
                       alert("닉네임 사용 가능합니다");
                       
@@ -202,7 +218,7 @@
              alert("이메일을 적어주세요");
          }else{
              $.ajax({
-                 type: 'post', url: './UserEmailCheck', data:{user_Email: user_Email},
+                 type: 'post', url: './UserOverlapCheck', data:{user_Email: user_Email},
               success: function(result){
                   if(result == 1){
                       alert("이메일 중복입니다");

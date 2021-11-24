@@ -37,7 +37,6 @@
         script.println("</script>");
 	}
 	
-	User user = new UserDAO().getUser(user_ID);
 	Bbs bbs = new BbsDAO().getBbs(post_Number);
 	%>
 	<!--웹 사이트 제목-->
@@ -125,10 +124,6 @@
 			<%
 			    }
 			%>
-		
-			<div>
-				<input type="submit" href="write.jsp" class="btn btn-primary" style="float: right;" value="글쓰기">
-			</div>
 		</div>
 	</div>
 </body>
