@@ -144,5 +144,44 @@ public class UserDAO {
         }
         return 2;
     }
+    /*
+     * public String changeNickname(String user_id) { String sql =
+     * "select user_NickName from user_tb where user_id = ?"; try { pstmt =
+     * conn.prepareStatement(sql); pstmt.setString(1, user_id); rs =
+     * pstmt.executeQuery(); if (rs.next()) { User user = new User(); // DB조회
+     * 결과로나온것을 순서대로 담아서 자바단으로 저장 user.setUser_NickName(rs.getString(1)); return
+     * rs.getString(1); } } catch (Exception e) { e.printStackTrace(); } return
+     * null; }
+     */
+
+    public User getUser(String user_Number) {
+        String SQL = "SELECT * FROM USER_TB WHERE user_Number = ?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            int i = Integer.parseInt(user_Number);
+            pstmt.setInt(1, i);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(); // DB조회 결과로나온것을 순서대로 담아서 자바단으로 저장
+                user.setUser_Number(rs.getInt(1));
+                user.setUser_ID(rs.getString(2));
+                user.setUser_PW(rs.getString(3));
+                user.setUser_Name(rs.getString(4));
+                user.setUser_NickName(rs.getString(5));
+                user.setUser_Gender(rs.getString(6));
+                user.setUser_DOB(rs.getString(7));
+                user.setUser_Email(rs.getString(8));
+                user.setUser_PhoneNumber(rs.getString(9));
+                user.setUser_JoinDate(rs.getString(10));
+                user.setUser_SecessionDate(rs.getString(11));
+                user.setUser_Authority(rs.getInt(12));
+                user.setUser_State(rs.getInt(13));
+                return user;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

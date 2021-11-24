@@ -3,8 +3,6 @@
 <%@ page import="bbs.BbsDAO"%>
 <%@ page import="bbs.Bbs"%>
 <%@ page import="java.util.ArrayList"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +14,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<!-- 게시판 제목 폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <title>게시판</title>
 <style>
 a, a:hover {
@@ -80,6 +82,7 @@ a, a:hover {
 
 	<div class="container" style = "margin-top:10px;">
 		<div class="row">
+		    <div style = "font-family: 'Jua', sans-serif; font-size:30px;">자유게시판</div>
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
 				<thead>
 					<tr>
@@ -95,19 +98,20 @@ a, a:hover {
 				<tbody>
 					<% 
 					   BbsDAO bbsDAO = new BbsDAO();
-					   ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
-					   for(int i=0; i<list.size(); i++){
+					   int board_Number = 1;
+					   ArrayList<Bbs> list1 = bbsDAO.getList(board_Number, pageNumber);
+					   for(int i=0; i<list1.size(); i++){
 					%>
 					<tr>
-						<td><%= list.get(i).getPost_Number() %></td>
-						<td><%= list.get(i).getPost_Category() %></td>
+						<td><%= list1.get(i).getPost_Number() %></td>
+						<td><%= list1.get(i).getPost_Category() %></td>
 						<td>
-							<a href="view.jsp?post_Number=<%=list.get(i).getPost_Number() %>"><%= list.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
+							<a href="view.jsp?post_Number=<%=list1.get(i).getPost_Number() %>"><%= list1.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
 						</td>
-						<td><%=list.get(i).getUser_NickName()%></td>
-						<td><%= list.get(i).getPost_Recommend() %></td>
-						<td><%= list.get(i).getPost_Views() %></td>
-						<td><%= list.get(i).getPost_InputDate().substring(0,11) + " " + list.get(i).getPost_InputDate().substring(11,13)+"시 " + list.get(i).getPost_InputDate().substring(14,16) + "분"%></td>
+						<td><%=list1.get(i).getUser_NickName()%></td>
+						<td><%= list1.get(i).getPost_Recommend() %></td>
+						<td><%= list1.get(i).getPost_Views() %></td>
+						<td><%= list1.get(i).getPost_InputDate().substring(0,11) + " " + list1.get(i).getPost_InputDate().substring(11,13)+"시 " + list1.get(i).getPost_InputDate().substring(14,16) + "분"%></td>
 					</tr>
 
 					<%

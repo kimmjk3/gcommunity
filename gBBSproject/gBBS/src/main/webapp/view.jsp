@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
+<%@ page import="user.User"%>
+<%@ page import="user.UserDAO"%>
 <%@ page import="bbs.Bbs"%>
 <%@ page import="bbs.BbsDAO"%>
 <!DOCTYPE html>
@@ -22,6 +24,7 @@
 	if (session.getAttribute("user_ID") != null) {
 	    user_ID = (String) session.getAttribute("user_ID");
 	}
+	
 	int post_Number = 0;
 	if(request.getParameter("post_Number")!= null){
 	    post_Number = Integer.parseInt(request.getParameter("post_Number"));
@@ -34,6 +37,7 @@
         script.println("</script>");
 	}
 	
+	User user = new UserDAO().getUser(user_ID);
 	Bbs bbs = new BbsDAO().getBbs(post_Number);
 	%>
 	<!--웹 사이트 제목-->
@@ -121,10 +125,10 @@
 			<%
 			    }
 			%>
+		
 			<div>
 				<input type="submit" href="write.jsp" class="btn btn-primary" style="float: right;" value="글쓰기">
 			</div>
-
 		</div>
 	</div>
 </body>

@@ -169,9 +169,9 @@ insert into `POST_TB`(
 	`POST_VIEWS`,			#조회수
 	`POST_WRITER`			#작성자
 )values
-	(null,1,'자유게시1번 게시물','자유게시물물물물','LOL',default,null,null,3,2,1),
-	(null,2,'팁공략2번 게시물.','게임잘하는 팁 : 많이해라 ','오버워치',default,null,null,2,4,2),
-	(null,2,'공지1번 게시물','게시판 규칙 준수좀','디아블로',default,null,null,4,4,3)
+	(null,1,'자유게시판 게시물','자유게시물물물물','LOL',default,null,null,3,2,1),
+	(null,2,'팁/공략 게시물.','게임잘하는 팁 : 많이해라 ','오버워치',default,null,null,2,4,2),
+	(null,3,'공지사항 게시물','게시판 규칙 준수좀','디아블로',default,null,null,4,4,3)
 ;
 
 #댓글 데이터 삽입

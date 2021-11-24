@@ -22,7 +22,7 @@
         if (session.getAttribute("user_ID")!=null){  //세션의 userID속성이 null이 아니면
             user_ID = (String) session.getAttribute("user_ID");
         }
-        if(user_ID ==null){  //로그인이 되어있는사람만 글을 쓸수있어야 한다.        
+        if(user_ID == null){  //로그인이 되어있는사람만 글을 쓸수있어야 한다.        
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('로그인을 하세요')");

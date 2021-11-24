@@ -118,6 +118,43 @@ public class BbsDAO {
         return list;
     }
 
+    public ArrayList<Bbs> getList(int board_Number, int pageNumber) {
+        // String SQL = "SELECT * FROM POST_TB WHERE POST_NUMBER < ? AND POST_DELETEDATE
+        // IS NULL ORDER BY POST_NUMBER DESC LIMIT 10";
+        String SQL = "SELECT POST_NUMBER, BOARD_NUMBER, POST_TITLE, POST_CONTENTS, POST_CATEGORY, POST_INPUTDATE, POST_CORRENT, POST_DELETEDATE, POST_RECOMMEND, POST_VIEWS, POST_WRITER, USER_ID, USER_NICKNAME "
+                + "FROM USER_TB INNER JOIN POST_TB ON post_tb.POST_WRITER = USER_NUMBER "
+                + "WHERE board_number = ? AND POST_NUMBER < ? AND POST_DELETEDATE IS NULL ORDER BY POST_NUMBER DESC LIMIT 10";
+
+        ArrayList<Bbs> list = new ArrayList<Bbs>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, board_Number);
+            pstmt.setInt(2, getNext() - (pageNumber - 1) * 10);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Bbs bbs = new Bbs();
+                // DB조회 결과로나온것을 순서대로 담아서 자바단으로 저장
+                bbs.setPost_Number(rs.getInt(1));
+                bbs.setBoard_Number(rs.getInt(2));
+                bbs.setPost_Title(rs.getString(3));
+                bbs.setPost_Contents(rs.getString(4));
+                bbs.setPost_Category(rs.getString(5));
+                bbs.setPost_InputDate(rs.getString(6));
+                bbs.setPost_Corrent(rs.getString(7));
+                bbs.setPost_DeleteDate(rs.getString(8));
+                bbs.setPost_Recommend(rs.getInt(9));
+                bbs.setPost_Views(rs.getInt(10));
+                bbs.setPost_Writer(rs.getInt(11));
+                bbs.setUser_ID(rs.getString(12));
+                bbs.setUser_NickName(rs.getString(13));
+                list.add(bbs);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     /**
      * pageNumber에 해당하는 페이지를 출력해야하는지 판단
      * 
