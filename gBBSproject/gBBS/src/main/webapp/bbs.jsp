@@ -102,7 +102,7 @@ a, a:hover {
 						<td><%= list.get(i).getPost_Number() %></td>
 						<td><%= list.get(i).getPost_Category() %></td>
 						<td>
-							<a href="view.jsp?Post_Number=<%=list.get(i).getPost_Number() %>"><%= list.get(i).getPost_Title() %></a>
+							<a href="view.jsp?post_Number=<%=list.get(i).getPost_Number() %>"><%= list.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
 						</td>
 						<td><%=list.get(i).getUser_NickName()%></td>
 						<td><%= list.get(i).getPost_Recommend() %></td>

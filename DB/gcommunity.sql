@@ -151,7 +151,6 @@ insert into `BOARD_TB` (
 	`BOARD_MANAGER`			#게시판생성자
 )values
 	(null,'자유게시판',default,null,null,1),
-	(null,'추천글',default,null,null,1),
 	(null,'팁/공략',default,null,null,1),
 	(null,'공지사항',default,null,null,1)
 ;
@@ -170,9 +169,9 @@ insert into `POST_TB`(
 	`POST_VIEWS`,			#조회수
 	`POST_WRITER`			#작성자
 )values
-	(null,1,'이거알려주세요','게임할때 이 설정법 맞나요?','LOL',default,null,null,3,2,1),
-	(null,4,'ㅎㅇㅎㅇㅎㅇ.','게시판 규칙 준수해 주세요','오버워치',default,null,null,2,4,2),
-	(null,1,'이거 공략좀 알려주세요','공략좀 알려주세요','디아블로',default,null,null,4,4,3)
+	(null,1,'자유게시1번 게시물','자유게시물물물물','LOL',default,null,null,3,2,1),
+	(null,2,'팁공략2번 게시물.','게임잘하는 팁 : 많이해라 ','오버워치',default,null,null,2,4,2),
+	(null,2,'공지1번 게시물','게시판 규칙 준수좀','디아블로',default,null,null,4,4,3)
 ;
 
 #댓글 데이터 삽입

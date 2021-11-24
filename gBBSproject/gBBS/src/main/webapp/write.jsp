@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import = "java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,9 +77,8 @@
 								<select type="number" class="form-control" placeholder="게시판 번호" name="board_Number">
 									<option value="" selected disabled hidden>게시판 선택</option>
 									<option value="1">자유게시판</option>
-									<option value="2">추천글</option>
-									<option value="3">팁/공략</option>
-									<option value="4">공지사항</option>
+									<option value="2">팁/공략</option>
+									<option value="3">공지사항</option>
 								</select>
 							</td>
 						</tr>
