@@ -11,10 +11,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width-device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
-<title>메인</title>
+<title>마이페이지</title>
 
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
     <%
         // 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
         String user_ID = null;

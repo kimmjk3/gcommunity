@@ -7,7 +7,7 @@
 <meta name="viewport" content = "width=device-width", initial-scale="1">
 <title>Insert title here</title>
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
 <script>
 	location.href = "main.jsp";
 </script>

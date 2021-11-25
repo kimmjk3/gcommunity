@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP 게시판 웹 사이트</title>
+<title>게시글작성 기능title>
 </head>
 <body>
     <%
@@ -49,7 +49,14 @@
                  else {             //글쓰기 정상 실행     
                      PrintWriter script = response.getWriter();
                      script.println("<script>");
-                     script.println("location.href = 'bbs.jsp'");
+                     if(bbs.getBoard_Number() == 1){
+                         script.println("location.href = 'bbs1.jsp'");
+                     }else if(bbs.getBoard_Number() == 2){
+                         script.println("location.href = 'bbs2.jsp'");
+                     }else if(bbs.getBoard_Number() == 3){
+                         script.println("location.href = 'bbs3.jsp'");
+                     }
+                     
                      script.println("</script>");
                  }
             }

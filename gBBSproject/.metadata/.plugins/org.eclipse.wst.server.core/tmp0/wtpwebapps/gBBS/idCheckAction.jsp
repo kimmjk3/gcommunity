@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP 게시판 웹 사이트</title>
+<title>중복검사 기능</title>
 </head>
 <body>
     <%  if(user.getUser_ID() == null){

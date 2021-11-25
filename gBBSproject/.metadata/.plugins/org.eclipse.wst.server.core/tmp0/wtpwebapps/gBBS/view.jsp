@@ -15,9 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-<title>메인</title>
+<title>게시글</title>
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
 	<%
 	// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
 	String user_ID = null;
@@ -69,23 +69,23 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarColor02">
-				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link active" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
-				</ul>
-			</div>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
+                </ul>
+            </div>
 		</div>
 	</nav>
 
-	<div class="container">
+	<div class="container" style = "margin-top:50px;">
 		<div class="row">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
 				<thead>
 					<tr>
-						<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
+						<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시글</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -115,15 +115,27 @@
                     </tr>
 				</tbody>
 			</table>
-			<a href="bbs.jsp" class="btn tn-primary">목록</a>
+			<div>
+			<div>
+                 <a href="bbs.jsp" class="btn btn-primary" style = "float:right; margin-right:5px;">목록</a>
+            </div>
 			<%
 			    if(user_ID != null && user_ID.equals(bbs.getUser_ID())){
 			%>
-			         <a href="update.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary">수정</a>
-			         <a href="deleteAction.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary">삭제</a>
+			
+            <div>
+                     <a href="deleteAction.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary" style = "float:right; margin-right:5px;">삭제</a>
+            </div>
+			<div>
+			         <a href="update.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary" style = "float:right; margin-right:5px;">수정</a>
+			</div>
+            </div>
+
+			
 			<%
 			    }
 			%>
+            
 		</div>
 	</div>
 </body>

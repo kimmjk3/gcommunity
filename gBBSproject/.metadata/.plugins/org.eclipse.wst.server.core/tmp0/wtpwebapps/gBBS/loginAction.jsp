@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width-device-width", initial-scale="1">
-<title>로그인 액션</title>
+<title>로그인 기능</title>
 </head>
 <body>
     <%

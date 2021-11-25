@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-<title>메인</title>
+<title>게임 커뮤니티</title>
 <style>
 a, a:hover {
     color: #000000;
@@ -22,7 +22,7 @@ a, a:hover {
 }
 </style>
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
 	<%
 	// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
 	String user_ID = null;
@@ -65,14 +65,14 @@ a, a:hover {
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarColor02">
-				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
-				</ul>
-			</div>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
+                </ul>
+            </div>
 		</div>
 	</nav>
 
@@ -81,10 +81,12 @@ a, a:hover {
 	<section
 		style="margin-top: 10px; margin-bottom: 10px; margin-left: 20%; margin-right: 20%; width: 60%; height: 800px; text-align: center; display: inline-block"
 	>
-		<div class="card text-white bg-dark mb-3" style="width: 45%; height:320px; display: inline-block">
-			<div class="card-header">자유게시판</div>
-			<div class="card-body">
-				<table style = "text-align:center;">
+		<div class="card text-white bg-dark mb-3" style="width: 35%; height:320px; display: inline-block">
+			<a href="bbs1.jsp" style="color:white;">
+			   <div class="card-header">자유게시판</div>
+			</a>
+			<div  class="card-body">
+				<table style = "text-align:left;">
 					<% 
                        BbsDAO bbsDAO = new BbsDAO();
 					   int board_Number1 = 1;
@@ -93,7 +95,7 @@ a, a:hover {
                     %>
 					<tr>
 						<td>
-							<a href="view.jsp?post_Number=<%=list1.get(i).getPost_Number() %>"><%= list1.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
+							<a href="view.jsp?post_Number=<%=list1.get(i).getPost_Number() %>" style = "color:#E0FFFF"><%= list1.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
 						</td>
 					</tr>
 					<%
@@ -103,32 +105,23 @@ a, a:hover {
 			</div>
 		</div>
 
-        <div class="card text-white bg-dark mb-3" style="width: 45%; height:320px; display: inline-block">
-            <div class="card-header">추천글</div>
+        <div class="card text-white bg-dark mb-3" style="width: 35%; height:320px; display: inline-block">
+            <a href="#" style="color:white;">
+                <div class="card-header">추천글</div>
+            </a>
             <div class="card-body">
-                <table style = "text-align:center;">
-                    <% 
-                       //BbsDAO bbsDAO = new BbsDAO();
-                       //int board_Number1 = 1;
-                       //ArrayList<Bbs> list1 = bbsDAO.getList(board_Number,pageNumber);
-                       for(int i=0; i<list1.size(); i++){
-                    %>
-                    <tr>
-                        <td>
-                            <a href="view.jsp?post_Number=<%=list1.get(i).getPost_Number() %>"><%= list1.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
-                        </td>
-                    </tr>
-                    <%
-                       }
-                    %>
+                <table style = "text-align:left;">
+                       
                 </table>
             </div>
         </div>
 
-        <div class="card text-white bg-dark mb-3" style="width: 45%; height:320px; display: inline-block">
-            <div class="card-header">팁/공략</div>
+        <div class="card text-white bg-dark mb-3" style="width: 35%; height:320px; display: inline-block">
+            <a href="bbs2.jsp" style="color:white;">
+                <div class="card-header">팁/공략</div>
+            </a>
             <div class="card-body">
-                <table style = "text-align:center;">
+                <table style = "text-align:left;">
                     <% 
                        int board_Number2 = 2;
                        ArrayList<Bbs> list2 = bbsDAO.getList(board_Number2,pageNumber);
@@ -136,7 +129,7 @@ a, a:hover {
                     %>
                     <tr>
                         <td>
-                            <a href="view.jsp?post_Number=<%=list2.get(i).getPost_Number() %>"><%= list2.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
+                            <a href="view.jsp?post_Number=<%=list2.get(i).getPost_Number() %>" style = "color:#E0FFFF"><%= list2.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
                         </td>
                     </tr>
                     <%
@@ -145,10 +138,12 @@ a, a:hover {
                 </table>
             </div>
         </div>
-        <div class="card text-white bg-dark mb-3" style="width: 45%; height:320px; display: inline-block">
-            <div class="card-header">공지사항</div>
+        <div class="card text-white bg-dark mb-3" style="width: 35%; height:320px; display: inline-block">
+            <a href="bbs3.jsp" style="color:white;">
+                <div class="card-header">공지사항</div>
+            </a>
             <div class="card-body">
-                <table style = "text-align:center;">
+                <table style = "text-align:left;">
                     <% 
                        int board_Number3 = 3;
                        ArrayList<Bbs> list3 = bbsDAO.getList(board_Number3,pageNumber);
@@ -156,7 +151,7 @@ a, a:hover {
                     %>
                     <tr>
                         <td>
-                            <a href="view.jsp?post_Number=<%=list3.get(i).getPost_Number() %>"><%= list3.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
+                            <a href="view.jsp?post_Number=<%=list3.get(i).getPost_Number() %>" style = "color:#E0FFFF"><%= list3.get(i).getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
                         </td>
                     </tr>
                     <%

@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-<title>메인</title>
+<title>게시글 수정</title>
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
 	<%
 	// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
 	String user_ID = null;
@@ -68,14 +68,14 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarColor02">
-				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link active" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
-				</ul>
-			</div>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
+                </ul>
+            </div>
 		</div>
 	</nav>
 

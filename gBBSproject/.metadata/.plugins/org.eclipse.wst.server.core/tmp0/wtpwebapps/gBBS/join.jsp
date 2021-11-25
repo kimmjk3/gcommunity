@@ -12,9 +12,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<!-- 회원가입 제목 폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <title>회원가입</title>
 </head>
-<body>
+<body style = "background-color:#F0FFFF;">
     <%
     // 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
     String user_ID = null;
@@ -54,22 +58,22 @@
 
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="bbs.jsp">자유게시판 <span class="visually-hidden">(current)</span>
-                    </a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">팁/공략</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     
     <!-- 회원가입 양식 -->
-    <div class="container">     <!-- 하나의 영역 생성 -->
-        <div class="col-lg-4">  <!-- 영역 크기 -->
+    <div class="container" style="text-align: center; width:30%; margin-top:50px; margin-bottom:50px;">     <!-- 하나의 영역 생성 -->
+        <div>  <!-- 영역 크기 -->
             <!-- 점보트론은 특정 컨텐츠, 정보를 두드러지게 하기 위한 큰 박스 -->
             <div class="jumbotron" style="padding-top: 20px;">
                 <form method="post" action="joinAction.jsp" onsubmit="return checkPassFunction();"> <!-- form 태그 ation은 뭐냐면 보낸다고 폼태그안에 입력된 정보를 post 방식으로 -->
-                    <h3 style="text-align: center;">회원가입 화면</h3>
+                    <h3 style="text-align: center;font-family: 'Jua', sans-serif; font-size: 30px;">회원가입</h3>
                     
                     <h5 style="text-align: left;">아이디</h5>
                     <div class="form-group">
@@ -79,9 +83,7 @@
 	                        <input type="button" onclick="idCheckFunction();" value="중복체크">
 	                        	                        
 	                        <!-- <button onclick="action='./idCheckAction.jsp';">중복체크</button> -->
-                        
                     </div>
-                    
                     
                     
                     <h5 style="text-align: left;">비밀번호</h5>
@@ -89,7 +91,6 @@
                         <input type="password" class="form-control" placeholder="영문,숫자 포함 8자 이상 16자 이내" onkeyup="passwordCheckFunction();" 
                         id="user_PW1" name="user_PW" maxlength="20">
                     </div>
-                    
                    <h5 style="text-align: left;">비밀번호 확인</h5>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="영문,숫자 포함 8자 이상 16자 이내" onkeyup="passwordCheckFunction();" 
