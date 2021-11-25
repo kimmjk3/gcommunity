@@ -136,9 +136,8 @@ INSERT INTO `USER_TB`(
 	`USER_AUTHORITY`,		#권한
 	`USER_STATE`)			#활동상태
 values
-	(null,'idid1234','pwpw1234','추홍재','추닉네임','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1),
-	(null,'kimidid1234','kimpwpw1234','김명진','김닉네임','남','1996-12-02','kim@naver.com','010-1234-5678',default,null,1,1),
-	(null,'sonidid1234','sonpwpw1234','손대영','손닉네임','남','1993-10-02','son@naver.com','010-1515-7878',default,null,1,1)
+	(null,'master12','master12','추홍재','관리자','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1)
+	;
 
 
 #게시판 데이터삽입
@@ -169,9 +168,9 @@ insert into `POST_TB`(
 	`POST_VIEWS`,			#조회수
 	`POST_WRITER`			#작성자
 )values
-	(null,1,'자유게시판 게시물','자유게시물물물물','LOL',default,null,null,3,2,1),
-	(null,2,'팁/공략 게시물.','게임잘하는 팁 : 많이해라 ','오버워치',default,null,null,2,4,2),
-	(null,3,'공지사항 게시물','게시판 규칙 준수좀','디아블로',default,null,null,4,4,3)
+	(null,1,'첫번째 자유게시판 게시물','첫번째 게시물 내용','LOL',default,null,null,0,0,1),
+	(null,2,'첫번째 팁/공략 게시물','첫번째 게시물 내용','오버워치',default,null,null,0,0,1),
+	(null,3,'첫번째 공지사항 게시물','첫번째 게시물 내용','디아블로',default,null,null,0,0,1)
 ;
 
 #댓글 데이터 삽입

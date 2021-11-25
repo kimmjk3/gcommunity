@@ -127,8 +127,13 @@
 					</tbody>
 				</table>
 				<div>
-					<input type="submit" href="updateAction.jsp" class="btn btn-primary" style="float: right;" value="글수정">
+					<input onclick=update_event() type="submit" class="btn btn-primary" style="float: right;" value="글수정">
 				</div>
+                <script>
+                function update_event(){
+                    alert("수정되었습니다.")
+                }
+                </script>
 			</form>
 
 		</div>

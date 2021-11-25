@@ -57,7 +57,13 @@ request.setCharacterEncoding("utf-8");
 	    } else { //정상적으로 수정 완료    
 	        PrintWriter script = response.getWriter();
 	        script.println("<script>");
-	        script.println("location.href = 'bbs.jsp'");
+            if(bbs.getBoard_Number() == 1){
+                script.println("location.href = 'bbs1.jsp'");
+            }else if(bbs.getBoard_Number() == 2){
+                script.println("location.href = 'bbs2.jsp'");
+            }else if(bbs.getBoard_Number() == 3){
+                script.println("location.href = 'bbs3.jsp'");
+            }
 	        script.println("</script>");
 	    }
 

@@ -12,7 +12,6 @@
 </head>
 <body>
 	<%
-    
         String user_ID = null;
         if (session.getAttribute("user_ID")!=null){  //세션의 userID속성이 null이 아니면
             user_ID = (String) session.getAttribute("user_ID");
@@ -36,6 +35,7 @@
             script.println("</script>");
         }
         Bbs bbs = new BbsDAO().getBbs(post_Number);
+        
         if(!user_ID.equals(bbs.getUser_ID())){
             PrintWriter script = response.getWriter();
             script.println("<script>");
@@ -55,7 +55,7 @@
             }else{  //정상적으로 입력이 완료되었다면
                  BbsDAO bbsDAO = new BbsDAO();
                  int result = bbsDAO.update(Integer.parseInt(request.getParameter("board_Number")), request.getParameter("post_Title"), request.getParameter("post_Contents"), request.getParameter("post_Category"), post_Number);   //글 수정 실행
-                 
+
                  if(result == -1){      //데이터베이스 오류
                      PrintWriter script = response.getWriter();
                      script.println("<script>");
@@ -66,13 +66,17 @@
                  else {             //정상적으로 수정 완료    
                      PrintWriter script = response.getWriter();
                      script.println("<script>");
-                     script.println("location.href = 'bbs.jsp'");
+                     if(bbs.getBoard_Number() == 1){
+                         script.println("location.href = 'bbs1.jsp'");
+                     }else if(bbs.getBoard_Number() == 2){
+                         script.println("location.href = 'bbs2.jsp'");
+                     }else if(bbs.getBoard_Number() == 3){
+                         script.println("location.href = 'bbs3.jsp'");
+                     }
                      script.println("</script>");
                  }
             }
         }
-    
-
     %>
 </body>
 </html>

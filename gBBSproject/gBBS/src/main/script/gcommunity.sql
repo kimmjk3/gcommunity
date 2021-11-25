@@ -119,6 +119,25 @@ REFERENCES `POST_TB` (
 	`BOARD_NUMBER`
 );
 
+#사용자 데이터삽입
+INSERT INTO `USER_TB`(
+	`USER_NUMBER`,			#회원번호
+	`USER_ID`,				#아이디
+	`USER_PW`,				#비밀번호
+	`USER_NAME`,			#이름
+	`USER_NICKNAME`,		#닉네임
+	`USER_GENDER`,			#성별
+	`USER_DOB`,				#생년월일
+	`USER_EMAIL`,			#이메일
+	`USER_PHONENUMBER`,		#휴대전화
+	`USER_JOINDATE`,		#가입일
+	`USER_SECESSIONDATE`,	#탈퇴일
+	`USER_AUTHORITY`,		#권한
+	`USER_STATE`)			#활동상태
+values
+	(null,'master12','master12','추홍재','관리자','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1)
+	;
+
 #게시판 데이터삽입
 insert into `BOARD_TB` (
 	`BOARD_NUMBER`,			#게시판번호
@@ -132,3 +151,21 @@ insert into `BOARD_TB` (
 	(null,'팁/공략',default,null,null,1),
 	(null,'공지사항',default,null,null,1)
 ;
+
+#게시글 데이터삽입
+insert into `POST_TB`(
+	`POST_NUMBER`,			#게시글번호
+	`BOARD_NUMBER`,			#게시판번호
+	`POST_TITLE`,			#제목
+	`POST_CONTENTS`,		#내용
+	`POST_CATEGORY`,		#카테고리
+	`POST_INPUTDATE`,		#등록일
+	`POST_CORRENT`,			#수정일
+	`POST_DELETEDATE`,		#삭제일
+	`POST_RECOMMEND`,		#추천수
+	`POST_VIEWS`,			#조회수
+	`POST_WRITER`			#작성자
+)values
+	(null,1,'첫번째 자유게시판 게시물','첫번째 게시물 내용','LOL',default,null,null,0,0,1),
+	(null,2,'첫번째 팁/공략 게시물','첫번째 게시물 내용','오버워치',default,null,null,0,0,1),
+	(null,3,'첫번째 공지사항 게시물','첫번째 게시물 내용','디아블로',default,null,null,0,0,1)

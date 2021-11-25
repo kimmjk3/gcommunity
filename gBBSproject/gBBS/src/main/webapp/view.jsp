@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <title>게시글</title>
 </head>
-<body style = "background-color:#F0FFFF;">
+<body style="background-color: #F0FFFF;">
 	<%
 	// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
 	String user_ID = null;
@@ -69,18 +69,18 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-            <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
-                </ul>
-            </div>
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link" href="bbs1.jsp">자유게시판 <span class="visually-hidden">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="#">추천글</a></li>
+					<li class="nav-item"><a class="nav-link" href="bbs2.jsp">팁/공략</a></li>
+					<li class="nav-item"><a class="nav-link" href="bbs3.jsp">공지사항</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 
-	<div class="container" style = "margin-top:50px;">
+	<div class="container" style="margin-top: 50px;">
 		<div class="row">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd;">
 				<thead>
@@ -89,53 +89,62 @@
 					</tr>
 				</thead>
 				<tbody>
-                    <tr>
-                        <td style="width: 20%;">게시판</td>
-                        <td colspan = "2">
-                            <%if(bbs.getBoard_Number()==1){%>자유게시판<%}%>
-                            <%if(bbs.getBoard_Number()==2){%>팁/공략<%}%>
-                            <%if(bbs.getBoard_Number()==3){%>공지사항<%}%>
-                        </td>
-                    </tr>
 					<tr>
-                        <td style="width: 20%;">글 제목</td>
-                        <td colspan = "2"><%= bbs.getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+						<td style="width: 20%;">게시판</td>
+						<td colspan="2">
+							<%if(bbs.getBoard_Number()==1){%>자유게시판<%}%>
+							<%if(bbs.getBoard_Number()==2){%>팁/공략<%}%>
+							<%if(bbs.getBoard_Number()==3){%>공지사항<%}%>
+						</td>
 					</tr>
-                    <tr>
-                        <td>작성자</td>
-                        <td colspan = "2"><%= bbs.getUser_NickName() %></td>
-                    </tr>
-                    <tr>
-                        <td>작성일자</td>
-                        <td colspan = "2"><%= bbs.getPost_InputDate().substring(0,11) + " " + bbs.getPost_InputDate().substring(11,13)+"시 " + bbs.getPost_InputDate().substring(14,16) + "분"%></td>
-                    </tr>
-                    <tr>
-                        <td>내용</td>
-                        <td colspan = "2" style="min-height:200px; text-align:left;"><%= bbs.getPost_Contents().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
-                    </tr>
+					<tr>
+						<td style="width: 20%;">글 제목</td>
+						<td colspan="2"><%= bbs.getPost_Title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td colspan="2"><%= bbs.getUser_NickName() %></td>
+					</tr>
+					<tr>
+						<td>작성일자</td>
+						<td colspan="2"><%= bbs.getPost_InputDate().substring(0,11) + " " + bbs.getPost_InputDate().substring(11,13)+"시 " + bbs.getPost_InputDate().substring(14,16) + "분"%></td>
+					</tr>
+					<tr>
+						<td>내용</td>
+						<td colspan="2" style="min-height: 200px; text-align: left;"><%= bbs.getPost_Contents().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+					</tr>
 				</tbody>
 			</table>
 			<div>
-			<div>
-                 <a href="bbs.jsp" class="btn btn-primary" style = "float:right; margin-right:5px;">목록</a>
-            </div>
-			<%
-			    if(user_ID != null && user_ID.equals(bbs.getUser_ID())){
-			%>
-			
-            <div>
-                     <a href="deleteAction.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary" style = "float:right; margin-right:5px;">삭제</a>
-            </div>
-			<div>
-			         <a href="update.jsp?post_Number=<%= post_Number %>" class= "btn btn-primary" style = "float:right; margin-right:5px;">수정</a>
-			</div>
-            </div>
+				<div>
+					<%if(bbs.getBoard_Number() == 1){%><a href="bbs1.jsp" class="btn btn-primary" style="float: right; margin-right: 5px;">목록</a><%}%>
+					<%if(bbs.getBoard_Number() == 2){%><a href="bbs2.jsp" class="btn btn-primary" style="float: right; margin-right: 5px;">목록</a><%}%>
+					<%if(bbs.getBoard_Number() == 3){%><a href="bbs3.jsp" class="btn btn-primary" style="float: right; margin-right: 5px;">목록</a><%}%>
+				</div>
 
-			
+				<%
+			    if(user_ID != null && user_ID.equals(bbs.getUser_ID())){
+			    %>
+				<div>
+					<a class="btn btn-primary" onclick=delete_event() style="float: right; margin-right: 5px;">삭제</a>
+				</div>
+				<script>
+				function delete_event(){
+					if (confirm("정말 삭제하시겠습니까?") == true){//확인
+						location.href = 'deleteAction.jsp?post_Number=<%= post_Number %>'
+					}else{//취소
+					    return;
+					}
+				}
+				</script>
+				<div>
+					<a href="update.jsp?post_Number=<%= post_Number %>" class="btn btn-primary" style="float: right; margin-right: 5px;">수정</a>
+				</div>
+			</div>
 			<%
 			    }
 			%>
-            
+
 		</div>
 	</div>
 </body>
