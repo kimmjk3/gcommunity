@@ -136,7 +136,7 @@ INSERT INTO `USER_TB`(
 	`USER_AUTHORITY`,		#권한
 	`USER_STATE`)			#활동상태
 values
-	(null,'master12','master12','추홍재','관리자','남','1996-08-31','chgfc@naver.com','010-4539-8111',default,null,1,1)
+	(null,'master12','master12','김명진','관리자','남','1996-12-02','kimmjk3@gmail.com','010-3505-3471',default,null,1,1)
 	;
 
 
