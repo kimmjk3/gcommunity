@@ -1,6 +1,0 @@
-INDEX VERSION 1.4+C:\Users\audwls\Desktop\gcommunity\gBBSproject\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3541902022.index
-3942611547.index
-134714921.index
-2198689507.index
-364143899.index
