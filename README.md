@@ -1,4 +1,7 @@
 # JSP 게시판만들기
+- ERD
+https://www.erdcloud.com/d/xSv3cXL2HhWPqhnqH
+
 <center>
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcTdge9%2FbtrAaUFQM0X%2FHhxLKPYDehFj5cQDF1ua1k%2Fimg.jpg" />
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbyXE4I%2FbtrAbwYTV63%2F6Y6aGVK3KP2WDJyLhS7Xe0%2Fimg.jpg"/>
